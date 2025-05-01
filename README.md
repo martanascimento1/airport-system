@@ -13,6 +13,8 @@
 1. Airport
 2. Plane
 3. Flight
+4. Passenger
+5. Reservation
 ### Design Patterns implementados:
 1.Builder: nas classes Flight e Plane;
 # airport-system

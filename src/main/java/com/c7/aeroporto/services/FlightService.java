@@ -2,6 +2,7 @@ package com.c7.aeroporto.services;
 
 
 import com.c7.aeroporto.dtos.BaggageInfoDTO;
+import com.c7.aeroporto.dtos.BaggagePolicyDTO;
 import com.c7.aeroporto.entities.Flight;
 import com.c7.aeroporto.entities.Plane;
 import com.c7.aeroporto.repositories.FlightRepository;
@@ -64,4 +65,13 @@ public class FlightService {
                 .build();
     }
 
+    public BaggagePolicyDTO getBaggagePolicy(Long flightId) {
+        Flight flight = flightRepository.findById(flightId)
+                .orElseThrow(() -> new RuntimeException("Voo não encontrado"));
+
+        return new BaggagePolicyDTO(
+                flight.getPlane().getMaxWeightPerLuggage(),
+                flight.getOverweightBaggageFee()
+        );
+    }
 }
