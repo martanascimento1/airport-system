@@ -14,14 +14,15 @@ public class FlightTest {
                 .name("Boeing 747")
                 .model("747-400")
                 .maxPassengers(300)
-                .build();
+                .build(); //ja faz a validação das regras e exceçoes
 
         LocalDateTime departureTime = LocalDateTime.now();
         LocalDateTime arrivalTime = departureTime.plusHours(2);
 
         Address origin = new Address();
         Address destination = new Address();
-
+        //criar instancias do objeto para os testes unitários
+        // inicia a construção de um objeto Flight completo:
         Flight flight = Flight.builder()
                 .status(1)
                 .plane(plane)
@@ -84,6 +85,7 @@ public class FlightTest {
     @Test
     public void testBusinessRuleViolations() {
         // Teste para status inválido
+        // Com o builder a validacao de erros pode ser feita diretamente nos testes
         IllegalStateException exception = assertThrows(IllegalStateException.class, () -> {
             Flight.builder()
                     .status(6) // Inválido: deve estar entre 1-5

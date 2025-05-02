@@ -55,7 +55,7 @@ public class FlightService {
         return baggageInfoDTO;
 
     }
-    //valida a criação de objetos
+    //valida a criação de objetos e permite a criacao parcial de objetos:
     public Flight createNewFlight(Integer status, Long planeId) {
         Plane plane = planeRepository.findById(planeId).orElseThrow();
         return Flight.builder()

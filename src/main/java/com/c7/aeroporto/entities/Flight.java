@@ -62,14 +62,14 @@ public class Flight implements Serializable {
         return new Builder();
     }
 
-    // Builder interno
+    // classe com Builder interno que contem os métodos para setar os atributos do objeto
     public static class Builder {
         private final Flight flight;
 
         public Builder() {
             this.flight = new Flight();
         }
-
+        // Cada metodo retorna o proprio Builder:
         public Builder id(Long id) {
             flight.id = id;
             return this;
@@ -125,12 +125,13 @@ public class Flight implements Serializable {
             return this;
         }
 
-        public Flight build() {
+        public Flight build() { //retorna a instancia criada
             validateMandatoryFields();
             validateBusinessRules();
             return flight;
         }
 
+                //verificacao de campos obrigatórios
         private void validateMandatoryFields() {
             StringBuilder errors = new StringBuilder();
 
