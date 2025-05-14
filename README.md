@@ -16,5 +16,19 @@
 4. Passenger
 5. Reservation
 ### Design Patterns implementados:
-1.Builder: nas classes Flight e Plane;
-# airport-system
+1.Builder: Contrução de objetos complexos nas classes Flight e Plane:
+
+2.Decorator: criação de reservas com informações adicionais conforme a escolha de cada passageiro:
+
+
+* Interface Base: **ReservationComponent.java** - Interface base que define as operações comuns que serão implementadas tanto pelo componente concreto quanto pelos decoradores.
+* Componente Concreto: **BasicReservation.java** - Implementação padrão de uma reserva, pode ser usada sozinha ou envolvida com algum decorador para adicionar mais funcionalidades.
+
+
+
+3.Observer: Notificar os passageiros em casos de atualizações no status de voos em que eles possuem reservas:
+
+* Subject: **FlightNotifier.java** - Armazena a lista de observadores (passageiros) e notifica todos eles quando algo acontece com o voo.
+* Observer: **Observer.java** - Interface base, define o contrato para qualquer classe que queira ser notificada.
+* Concrete: **PassengerObserver.java** - Implementa Observer e representa um passageiro.
+
