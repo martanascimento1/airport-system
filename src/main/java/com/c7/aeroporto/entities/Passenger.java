@@ -21,17 +21,14 @@ public class Passenger {
     @Column(unique = true, nullable = false)
     private String passportNumber;
 
-    // Construtor padrão (obrigatório para JPA)
     public Passenger() {
     }
 
-    // Construtor com campos
     public Passenger(String name, String passportNumber) {
         this.name = name;
         this.passportNumber = passportNumber;
     }
 
-    // Getters e Setters (obrigatórios para JPA)
     public Long getId() {
         return id;
     }
@@ -56,7 +53,6 @@ public class Passenger {
         this.passportNumber = passportNumber;
     }
 
-    // Método toString() para logging/depuração
     @Override
     public String toString() {
         return "Passenger [id=" + id + ", name=" + name + ", passportNumber=" + passportNumber + "]";

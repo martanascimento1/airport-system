@@ -146,12 +146,10 @@ public class Plane implements Serializable {
         }
     }
 
-    // Methods to set individual attributes
     public void setId(Long id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setModel(String model) { this.model = model; }
 
-    // Methods to get individual attributes
 
     public Long getId() { return id; }
     public String getName() { return name; }

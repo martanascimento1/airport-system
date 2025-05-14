@@ -57,7 +57,8 @@ public class Flight implements Serializable {
     // Construtor privado para JPA e Builder
     public Flight() {}
 
-    // O padrão Builder foi implementado para melhorar a criacao de objetos complexos como Flight e Plane, os quais possuem muitos atributos
+    // O padrão Builder foi implementado para melhorar a criacao de objetos complexos como Flight e Plane, os quais possuem muitos atributos.
+
     public static Builder builder() {
         return new Builder();
     }
@@ -66,6 +67,7 @@ public class Flight implements Serializable {
     public static class Builder {
         private final Flight flight;
 
+        //metodos para cada atributo do objeto construido
         public Builder() {
             this.flight = new Flight();
         }

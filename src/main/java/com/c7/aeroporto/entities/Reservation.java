@@ -16,6 +16,10 @@ public class Reservation {
         @JoinColumn(name = "passenger_id", nullable = false)
         private Passenger passenger;
 
+        private boolean hasInsurance;
+        private boolean hasSpecialMeal;
+        private boolean hasSeatSelection;
+        private Double totalCost;
         private String seatNumber;
         private LocalDateTime bookingDate;
 
@@ -38,5 +42,29 @@ public class Reservation {
     }
 
     public void setCheckedIn(boolean b) {
+    }
+
+    public void setPassengerName(String passengerName) {
+    }
+
+    public void setHasInsurance(boolean hasInsurance) {
+    }
+
+    public void setHasSpecialMeal(boolean hasMeal) {
+    }
+
+    public void setHasSeatSelection(boolean hasSeatSelection) {
+    }
+
+    public void setTotalCost(double cost) {
+        this.totalCost = totalCost;
+    }
+
+    public Double getTotalCost() {
+        return totalCost;
+    }
+
+    public Passenger getPassenger() {
+        return passenger;
     }
 }
