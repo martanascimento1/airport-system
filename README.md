@@ -17,12 +17,15 @@
 5. Reservation
 ### Design Patterns implementados:
 1.Builder: Contrução de objetos complexos nas classes Flight e Plane:
+* Implementação da criação de objetos com builder nas classes FlightTest.java e PlaneTest.java, ambos no caminho : /src/test/java/com/c7/aeroporto/entities
 
 2.Decorator: criação de reservas com informações adicionais conforme a escolha de cada passageiro:
 
 
 * Interface Base: **ReservationComponent.java** - Interface base que define as operações comuns que serão implementadas tanto pelo componente concreto quanto pelos decoradores.
 * Componente Concreto: **BasicReservation.java** - Implementação padrão de uma reserva, pode ser usada sozinha ou envolvida com algum decorador para adicionar mais funcionalidades.
+* Decorador Abstrato: **ReservationDecorator.java** - Implementa a mesma interface de Reservation Component.
+* Decorador Concreto: **SpecialMeal.java**, **SeatSelection.java**, **TravelInsurance**
 
 
 
